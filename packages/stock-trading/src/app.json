@@ -1,0 +1,30 @@
+{
+    "devtools_port": 9090,
+    "startup_app": {
+        "name": "Stock Trading",
+        "description": "A financial OpenFin application that was developed using GrapeCity's Wijmo controls",
+        "url": "http://localhost:3300",
+        "uuid": "e6f6dcb3-4739-4cd5-b556-c5c2f3936f9c",
+        "autoShow": true,
+        "saveWindowState": true
+    },
+    "runtime": {
+        "arguments": "",
+        "version": "14.78.47.21"
+    },
+    "shortcut": {
+        "company": "GrapeCity",
+        "description": "A financial OpenFin application that was developed using GrapeCity's Wijmo controls",
+        "icon": "http://localhost:3300/favicon.ico",
+        "name": "Stock Trading"
+    },
+    "services": [ 
+        {"name": "layouts"},
+        {"name": "notifications"}
+    ],
+    "features": {
+        "snap": true,
+        "dock": true,
+        "tab": true
+    }
+}

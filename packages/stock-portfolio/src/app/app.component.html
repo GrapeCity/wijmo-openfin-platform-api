@@ -1,0 +1,85 @@
+﻿<div class="container-fluid" *ngIf="portfolio">
+    <img class="framework-logo" src="assets/angular.png" alt="angular logo" [wjTooltip]="'Built on Angular framework'" />
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="align-center">
+            </div>
+            <div class="align-center">
+                <div class="btn-group btn-group-xs app-buttons">
+                    <button type="button" class="btn btn-default" (click)="appManager.toggleApp('trading')" [ngClass]="{active: appManager.isAppRunning('trading')}">Trading</button>
+                    <button type="button" class="btn btn-default" (click)="appManager.toggleApp('changes')" [ngClass]="{active: appManager.isAppRunning('changes')}">Changes</button>
+                    <button type="button" class="btn btn-default" (click)="appManager.toggleApp('hloc')" [ngClass]="{active: appManager.isAppRunning('hloc')}">HLOC</button>
+                    <button type="button" class="btn btn-default" (click)="appManager.toggleApp('trendline')" [ngClass]="{active: appManager.isAppRunning('trendline')}">Trendline</button>  
+                </div>
+                <div class="window-buttons">
+                </div>
+            </div>
+            <div class="align-center">                
+            </div>
+        </div>
+        
+        <div class="panel-body">
+        <wj-flex-grid [itemsSource]="portfolio.view"
+                      [headersVisibility]="'Column'"
+                      [allowDragging]="'None'"
+                      [allowResizing]="'None'"
+                      [selectionMode]="'Row'">
+            <wj-flex-grid-column [header]="''" [isReadOnly]="true" [width]="50" [align]="'center'">
+                <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-cell="cell">
+                    <a href="#" (click)="removeExistingItem(cell.item.symbol)" [wjTooltip]="'Remove'" class="action-remove">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </a>
+                </ng-template>
+            </wj-flex-grid-column>
+            <wj-flex-grid-column header="Name" binding="name" [isReadOnly]="true" [width]="'*'">
+                <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-cell="cell">
+                    <span [ngStyle]="{'background-color': cell.item.color}">
+                        &nbsp;&nbsp;&nbsp;
+                    </span>
+                    &nbsp;
+                    {{cell.item.name}}
+                </ng-template>
+            </wj-flex-grid-column>
+            <wj-flex-grid-column header="Symbol" binding="symbol" [isReadOnly]="true" [width]="80"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Chart" [isReadOnly]="true" [width]="60" [align]="'center'">
+                <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-cell="cell">
+                    <input type="checkbox" [(ngModel)]="cell.item.chart" />
+                </ng-template>
+            </wj-flex-grid-column>
+            <wj-flex-grid-column header="Price" binding="lastPrice" [isReadOnly]="true" format="n2" [width]="80"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Change" binding="changePercent" [isReadOnly]="true" format="p2" [width]="80">
+                <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-cell="cell">
+                    <div class="chg-cell" [ngClass]="getChangeClass(cell.item.change)">
+                        <span class="chg-val">{{cell.item.changePercent | percent:'1.2-2'}}</span>
+                        <span class="chg-glyph" [ngClass]="getChangeGlyphClass(cell.item.change)"></span>
+                    </div>
+                </ng-template>
+            </wj-flex-grid-column>
+        </wj-flex-grid>
+        </div>
+
+        <div class="panel-footer portfolio-panel">
+            <div class="portfolio-label">Add to portfolio:</div>
+            <div class="portfolio-group input-group">
+                <wj-auto-complete [itemsSourceFunction]="searchCompany"
+                                [itemFormatter]="formatCompany"
+                                [isContentHtml]="true"
+                                [selectedValuePath]="'symbol'"
+                                [(selectedValue)]="portfolio.newItemSymbol"
+                                [showDropDownButton]="false"
+                                [placeholder]="'company name or symbol'"
+                                [cssMatch]="'bg-primary'"
+                                #autocomplete
+                                class="portfolio-input">
+                </wj-auto-complete>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-primary"
+                            (click)="addNewItem()"
+                            [disabled]="!portfolio.canAddNewItem()">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

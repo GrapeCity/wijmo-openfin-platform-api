@@ -1,0 +1,107 @@
+body
+{
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
+}
+
+.framework-logo {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    opacity: 0.5;
+}
+
+.framework-logo:hover {
+    opacity: 1;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.panel {
+    margin-bottom: 0;
+}
+
+.panel-heading {
+    height: 43px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    -webkit-app-region: drag;
+    transition: background-color 0.5s linear;
+}
+
+.panel-heading.selected {
+    color: black;
+}
+
+.panel-heading button {
+    -webkit-app-region: no-drag;
+}
+
+.panel-heading .window-buttons button {
+    margin-left: 10px;
+    font-family: serif;
+}
+
+.panel-heading .window-buttons button:focus {
+    outline: none;
+}
+
+.panel-body {
+    height: calc(100vh - 45px);
+    padding: 0;
+    overflow: auto;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+}
+
+.h-16 {
+    height: 16px;
+}
+
+/* customize appearance of the chart */
+.wj-flexchart {
+    border: none;
+    margin: 0;
+    padding-top: 0;
+    padding-right: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.chart-container {
+    height: calc(100% - 5px);
+}
+
+.chart-container.fadein {
+    animation: fadein ease-out 0.5s;
+}
+
+.chart-container.fadeout {
+    animation: fadeout ease-in 0.5s;
+}
+
+@keyframes fadein {
+    from {
+      opacity: 1;
+    }
+    
+    to {
+      opacity: 0;
+    }
+}
+  
+@keyframes fadeout {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

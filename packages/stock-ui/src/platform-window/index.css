@@ -1,0 +1,85 @@
+:root {
+  --active-color: #282828;
+  --background-color: #424242;
+  --title-bar: #3c3c3c;
+  --default-color: #888888;
+  --tab-text: #fff;
+
+  --title-bar-height: 43px;
+  --corners-radius: 5px;
+  --splitter-width: 100px;
+
+  --layout-container-padding-top: 0px;
+  --layout-container-padding-bottom: 5px;
+  --layout-container-padding-left: 5px;
+  --layout-container-padding-right: 5px;
+  --layout-container-from-top: calc(var(--title-bar-height) + var(--layout-container-padding-top));
+
+  --frame-background-color: var(--background-color);
+  --title-bar-background-color: var(--title-bar);
+  --tabs-bar-background-color: var(--background-color);
+  --tab-background-color: var(--background-color);
+  --tab-background-color-active: var(--active-color);
+  --tab-text-color: var(--tab-text);
+  --splitter-color: var(--default-color);
+  --color-behind-views: var(--background-color);
+}
+
+body
+{
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.panel {
+  margin-bottom: 0;
+}
+
+.panel-heading {
+  height: var(--title-bar-height);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  -webkit-app-region: drag;
+}
+
+.panel-heading button {
+  -webkit-app-region: no-drag;
+}
+
+.panel-heading .window-buttons button {
+  margin-left: 10px;
+  font-family: serif;
+}
+
+.panel-heading .window-buttons button:focus {
+  outline: none;
+}
+
+.panel-body {
+  height: calc(100vh - 45px);
+  padding: 0;
+  overflow: hidden;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.h-16 {
+  height: 16px;
+}
+
+/* window customization */
+.tab-button {
+  display: none;
+}
+
+div.wrapper_title {
+  color: var(--default-color);
+}

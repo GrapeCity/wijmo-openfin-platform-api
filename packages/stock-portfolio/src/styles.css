@@ -1,0 +1,157 @@
+﻿/* You can add global styles to this file, and also import other style files */
+@import 'bootswatch/cyborg/bootstrap.min.css';
+@import '@grapecity/wijmo.styles/themes/wijmo.theme.cyborg.css';
+
+body
+{
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
+}
+
+.framework-logo {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    opacity: 0.5;
+}
+
+.framework-logo:hover {
+    opacity: 1;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.panel {
+    margin-bottom: 0;
+}
+
+.panel-heading {
+    height: 43px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    -webkit-app-region: drag;
+}
+
+.panel-heading button {
+    -webkit-app-region: no-drag;
+}
+
+.panel-heading .window-buttons button {
+    margin-left: 10px;
+    font-family: serif;
+}
+
+.panel-heading .app-buttons button:focus,
+.panel-heading .window-buttons button:focus {
+    outline: none;
+}
+
+.panel-heading .app-buttons button:focus:not(.active) {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.panel-body {
+    height: calc(100vh - 92px);
+    padding: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.panel-footer{
+    height: 47px;
+    padding: 5px 15px;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+}
+
+.h-16 {
+    height: 16px;
+}
+
+/* customize appearance of portfolio panel */
+
+.portfolio-panel {
+    display: flex;
+    align-items: center;
+}
+
+.portfolio-label {
+    flex: none;
+}
+
+.portfolio-group {
+    display: inline-table;
+    flex: auto;
+    max-width: 400px;
+    margin-left: 10px;
+}
+
+.portfolio-group .portfolio-input {
+    display: table-cell;
+    border-radius: 0;
+}
+
+.portfolio-group .portfolio-input > .wj-template {
+    display: block;
+    width: 100%;
+}
+
+.portfolio-group .input-group-btn .btn {
+    border-radius: 0;
+}
+
+/* customize appearance of the FlexGrid control */
+.wj-control {
+    outline: 0;
+}
+.wj-control.wj-flexgrid {
+    height: 100%;
+    border: none;
+    border-radius: 0;
+}
+
+.wj-flexgrid [wj-part="root"] {
+    overflow-x: hidden !important;
+}
+
+.wj-cell {
+    border: none;
+    padding: 6px ;
+    font-size: 14px;
+}
+
+.action-remove:hover,
+.action-remove:focus {
+    text-decoration: none;
+}
+
+.chg-cell.chg-cell-down {
+    color: #ff4700;
+}
+
+.chg-cell.chg-cell-up {
+    color: #00ff75;
+}
+
+.chg-cell.chg-cell-none {
+    color: #b0b0b0;
+}
+
+.chg-cell .chg-val {
+    margin-right: 0.5em;
+}
+
+/* theme adjustments */
+
+.wj-cells .wj-cell.wj-state-selected,
+.wj-cells .wj-cell.wj-state-multi-selected {
+    background: #77afc9;
+    color: #fff;
+}

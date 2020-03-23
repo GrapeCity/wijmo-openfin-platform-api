@@ -1,0 +1,30 @@
+{
+    "devtools_port": 9090,
+    "startup_app": {
+        "name": "Stock Charts",
+        "description": "A financial OpenFin application that was developed using GrapeCity's Wijmo controls",
+        "url": "http://localhost:3100",
+        "uuid": "c274228d-18aa-486c-a5bd-d1f6475a237f",
+        "autoShow": true,
+        "saveWindowState": true
+    },
+    "runtime": {
+        "arguments": "--wj-stockportfolio-chart-hloc",
+        "version": "14.78.47.21"
+    },
+    "shortcut": {
+        "company": "GrapeCity",
+        "description": "A financial OpenFin application that was developed using GrapeCity's Wijmo controls",
+        "icon": "http://localhost:3100/favicon.ico",
+        "name": "Stock Charts"
+    },
+    "services": [ 
+        {"name": "layouts"},
+        {"name": "notifications"}
+    ],
+    "features": {
+        "snap": true,
+        "dock": true,
+        "tab": true
+    }
+}

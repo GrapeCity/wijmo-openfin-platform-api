@@ -1,0 +1,47 @@
+{
+  "name": "stock-charts",
+  "version": "2.0.0",
+  "private": true,
+  "homepage": ".",
+  "dependencies": {
+    "@grapecity/wijmo": "~5.20192.624",
+    "@grapecity/wijmo.react.chart": "~5.20192.624",
+    "@grapecity/wijmo.react.chart.analytics": "~5.20192.624",
+    "@grapecity/wijmo.styles": "~5.20192.624",
+    "stock-core": "file:../stock-core",
+    "bootstrap": "3.4.1",
+    "bootswatch": "3.4.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-scripts": "3.2.0"
+  },
+  "scripts": {
+    "start": "concurrently -k -s first \"npm:serve\" \"npm:start-openfin\"",
+    "start-openfin": "wait-on http://localhost:3100/ && openfin -l -c http://localhost:3100/app.json",
+    "serve": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "update-version": "npm --no-git-tag-version version patch"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "4.1.2",
+    "openfin-cli": "^2.0.12",
+    "wait-on": "3.3.0"
+  }
+}

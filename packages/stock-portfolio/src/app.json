@@ -1,0 +1,112 @@
+{
+    "devtools_port": 9090,
+    "platform": {
+        "uuid": "stock_portfolio_platform_api_test",
+        "applicationIcon": "http://localhost:4200/favicon.ico",
+        "autoShow": false,
+        "providerUrl": "http://localhost:3000/platform-provider/index.html",
+        "defaultWindowOptions": {
+            "url": "http://localhost:3000/platform-window/index.html",
+            "contextMenu": true,
+            "saveWindowState": false,
+            "backgroundThrottling": true
+        }
+    },
+    "snapshot": {        
+        "windows": [
+            {
+                "defaultWidth": 1200,
+                "defaultHeight": 800,
+                "defaultLeft": 0,
+                "defaultTop": 0,
+                "layout": {
+                    "content": [
+                        {
+                            "type": "column",
+                            "content": [
+                                {
+                                    "type": "row",
+                                    "content": [
+                                        {
+                                            "type": "component",
+                                            "componentName": "view",
+                                            "componentState": {
+                                                "name": "component_stock_portfolio",
+                                                "url": "http://localhost:4200"
+                                            }
+                                        },
+                                        {
+                                            "type": "component",
+                                            "componentName": "view",
+                                            "componentState": {
+                                                "name": "component_stock_changes_chart",
+                                                "url": "http://localhost:4300/#/changes"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "row",
+                                    "content": [
+                                        {
+                                            "type": "component",
+                                            "componentName": "view",
+                                            "componentState": {
+                                                "name": "component_stock_trading",
+                                                "url": "http://localhost:3300"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }                        
+                    ]
+                }
+            },
+            {
+                "defaultWidth": 600,
+                "defaultHeight": 800,
+                "defaultLeft": 1000,
+                "defaultTop": 100,
+                "layout": {
+                    "content": [
+                        {
+                            "type": "column",
+                            "content": [
+                                {
+                                    "type": "component",
+                                    "componentName": "view",
+                                    "componentState": {
+                                        "name": "component_stock_hloc_chart",
+                                        "url": "http://localhost:3100"
+                                    }
+                                },
+                                {
+                                    "type": "component",
+                                    "componentName": "view",
+                                    "componentState": {
+                                        "name": "component_stock_trendline_chart",
+                                        "url": "http://localhost:3100"
+                                    }
+                                }
+                            ]
+                        }                        
+                    ]
+                }
+            }
+        ]
+    },
+    "runtime": {
+        "arguments": "--v=1 --inspect",
+        "version": "canary"
+    },
+    "shortcut": {
+        "company": "GrapeCity",
+        "description": "A financial OpenFin application that was developed using GrapeCity's Wijmo controls",
+        "icon": "http://localhost:4200/favicon.ico",
+        "name": "Stock Portfolio"
+    },
+    "services": [
+        {"name": "notifications"}
+    ]
+}

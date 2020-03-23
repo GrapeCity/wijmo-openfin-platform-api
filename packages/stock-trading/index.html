@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Stock Trading</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Wijmo - enable web components mode -->
+    <script>
+        window['wj-control-is-element'] = true;
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <wjc-flex-grid id="theGrid" is-read-only="true">
+                    <wjc-flex-grid-column header="Name" binding="name" width="220" allow-dragging="false"></wjc-flex-grid-column>
+                    <wjc-flex-grid-column header="Bid" binding="bid" format= "n2" width="220" allow-sorting="false" ></wjc-flex-grid-column>
+                    <wjc-flex-grid-column header="Ask" binding="ask" format= "n2" width="220" allow-sorting="false" ></wjc-flex-grid-column>
+                    <wjc-flex-grid-column header="Last Sale" binding="lastSale" format= "n2" width="220" allow-sorting="false" ></wjc-flex-grid-column>
+                    <wjc-flex-grid-column header="Bid Size" binding="bidSize" format= "n0" allow-sorting="false"></wjc-flex-grid-column>
+                    <wjc-flex-grid-column header="Ask Size" binding="askSize" format="n0" allow-sorting="false"></wjc-flex-grid-column>
+                    <wjc-flex-grid-column header="Last Size" binding="lastSize" format="n0" allow-sorting="false"></wjc-flex-grid-column>
+                    <wjc-flex-grid-column header="Volume" binding="volume" format="n0" allow-sorting="false"></wjc-flex-grid-column>
+                    <wjc-flex-grid-column header="Quote Time" binding="quoteTime" format="hh:mm:ss" align="center" allow-sorting="false"></wjc-flex-grid-column>
+                    <wjc-flex-grid-column header="Trade Time" binding="tradeTime" format="hh:mm:ss" align="center" allow-sorting="false"></wjc-flex-grid-column>
+                </wjc-flex-grid>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

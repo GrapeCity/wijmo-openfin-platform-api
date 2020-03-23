@@ -1,0 +1,162 @@
+﻿body
+{
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.panel {
+    margin-bottom: 0;
+}
+
+.panel-heading {
+    height: 43px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    -webkit-app-region: drag;
+}
+
+.panel-heading button {
+    -webkit-app-region: no-drag;
+}
+
+.panel-heading .window-buttons button {
+    margin-left: 10px;
+    font-family: serif;
+}
+
+.panel-heading .window-buttons button:focus {
+    outline: none;
+}
+
+.panel-body {
+    height: calc(100vh - 2px);
+    padding: 0;
+    overflow: overlay;
+}
+
+.panel-body:hover::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    display: inherit;
+}
+
+.panel-body::-webkit-scrollbar {
+    display: none;
+}
+
+.panel-body::-webkit-scrollbar-track,
+.panel-body::-webkit-scrollbar-corner {
+    background: #f1f1f1;
+}
+
+.panel-body::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.panel-body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+}
+
+.h-16 {
+    height: 16px;
+}
+
+label {
+    font-weight: normal;
+    margin-right: 20px;
+}
+
+/* Wijmo Controls */
+.wj-flexgrid {
+    height: 100%;
+}
+
+.wj-flexgrid .wj-cell {
+    padding: 6px;
+    font-size: 14px;
+}
+.wj-flexgrid .wj-cell:not(.wj-header) {
+    border-bottom: none;
+}
+
+/* ticker cell */
+.ticker div {
+    display: inline-block;
+}
+.ticker .chg {
+    opacity: .75;
+    text-align: center;
+    width: 4em;
+}
+.ticker .glyph {
+    font-size: 120%;
+    text-align: center;
+    width: 1em;
+}
+.ticker .spark {
+    padding: 0 4px;
+    width: 4em;
+    height: 1em;
+    opacity: .65;
+}
+.ticker .spark svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    stroke-width: 2px;
+    overflow: visible;
+}
+
+/* value going up */
+.wj-cell:not(.wj-state-selected):not(.wj-state-multi-selected) .ticker.chg-up .chg,
+.wj-cell:not(.wj-state-selected):not(.wj-state-multi-selected) .ticker.chg-up .glyph {
+    color: green;
+}
+
+/* value going down */
+.wj-cell:not(.wj-state-selected):not(.wj-state-multi-selected) .ticker.chg-down .chg,
+.wj-cell:not(.wj-state-selected):not(.wj-state-multi-selected) .ticker.chg-down .glyph {
+    color: red;
+}
+
+/* value not changing */
+.ticker.chg-none .chg,
+.ticker.chg-none .glyph {
+    opacity: .25;
+}
+
+/* up/down 'flare' animations */
+.ticker.flare-up:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    animation: 1s ease-out flare-up;
+}
+@keyframes flare-up {
+    from { background: rgba(50, 255, 50, 0.5); }
+}
+.ticker.flare-down:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    animation: 1s ease-out flare-down;
+}
+@keyframes flare-down {
+    from { background: rgba(255, 50, 50, 0.5); }
+}

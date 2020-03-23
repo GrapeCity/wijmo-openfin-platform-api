@@ -1,0 +1,39 @@
+{
+  "name": "stock-trading",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently -k -s first \"npm:serve\" \"npm:start-openfin\"",
+    "start-openfin": "wait-on http://localhost:3300/ && openfin -l -c http://localhost:3300/app.json",
+    "serve": "webpack && webpack-dev-server",
+    "build": "webpack",
+    "update-version": "npm --no-git-tag-version version patch"
+  },
+  "dependencies": {
+    "@grapecity/wijmo": "~5.20192.624",
+    "@grapecity/wijmo.grid": "~5.20192.624",
+    "@grapecity/wijmo.styles": "~5.20192.624",
+    "@grapecity/wijmo.webcomponents.grid": "~5.20192.624",
+    "stock-core": "file:../stock-core",
+    "bootstrap": "3.4.1",
+    "bootswatch": "3.4.1"
+  },
+  "devDependencies": {
+    "@types/openfin": "^43.0.1",
+    "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "1.0.0",
+    "file-loader": "2.0.0",
+    "html-webpack-plugin": "3.2.0",
+    "source-map-loader": "0.2.4",
+    "style-loader": "0.23.0",
+    "ts-loader": "4.5.0",
+    "typescript": "3.1.2",
+    "url-loader": "1.1.1",
+    "webpack": "4.17.1",
+    "webpack-cli": "3.1.0",
+    "webpack-dev-server": "^3.8.2",
+    "concurrently": "4.1.2",
+    "openfin-cli": "^2.0.12",
+    "wait-on": "3.3.0"
+  }
+}
