@@ -131,7 +131,7 @@ echo        ]
 echo    },
 echo    "runtime": {
 echo        "arguments": "--v=1 --inspect",
-echo        "version": "canary"
+echo        "version": "beta"
 echo    },
 echo    "shortcut": {
 echo        "company": "GrapeCity",

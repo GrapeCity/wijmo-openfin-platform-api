@@ -5,6 +5,11 @@ import { html, render } from 'lit-html/lit-html.js';
 
 import * as core from 'stock-core';
 
+window.addEventListener('DOMContentLoaded', () => {
+    const containerId = 'layout-container';
+    fin.Platform.Layout.init({containerId});
+});
+
 class PlatformWindow extends HTMLElement {
   constructor() {
     super();
