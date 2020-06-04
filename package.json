@@ -1,6 +1,6 @@
 {
   "name": "stock-portfolio",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A financial sample that demonstrates the usage of Wijmo controls in OpenFin application",
   "private": true,
   "scripts": {
@@ -27,7 +27,7 @@
     "install-stock-charts": "cd packages/stock-charts && npm install",
     "install-stock-trading": "cd packages/stock-trading && npm install",
     "update-version": "npm --no-git-tag-version version patch && npm run update-version-apps && node cli.js --update-version",
-    "update-version-apps": "npm run update-version-stock-core && update-version-stock-ui && npm run update-version-stock-portfolio &&  npm run update-version-stock-charts && npm run update-version-stock-trading",
+    "update-version-apps": "npm run update-version-stock-core && npm run update-version-stock-ui && npm run update-version-stock-portfolio &&  npm run update-version-stock-charts && npm run update-version-stock-trading",
     "update-version-stock-core": "cd packages/stock-core  && npm run update-version",
     "update-version-stock-ui": "cd packages/stock-ui  && npm run update-version",
     "update-version-stock-portfolio": "cd packages/stock-portfolio  && npm run update-version",

@@ -1,6 +1,6 @@
 {
   "name": "stock-portfolio",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A financial sample that demonstrates the usage of Wijmo controls in OpenFin application",
   "scripts": {
     "start": "concurrently -k -s first \"npm:server-chart\" \"npm:server-grid\" \"npm:openfin-grid\"",
